@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <Menu :menu="menu" />
     <AppHeader />
     <nuxt />
   </div>
@@ -7,10 +8,17 @@
 
 <script>
 import AppHeader from '../components/AppHeader';
+import Menu from '../components/Menu';
 
 export default {
   components: {
-    AppHeader
+    AppHeader,
+    Menu,
+  },
+  data() {
+    return {
+      menu: false
+    }
   }
 }
 </script>
@@ -20,6 +28,7 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 body {
@@ -39,10 +48,8 @@ ul {
 }
 
 .container {
-  max-width: 800px;
-  margin: 2rem auto;
-  overflow: hidden;
-  padding: 1rem 2rem;
+  height: 100vh;
+  overflow: scroll;
   background: #fff;
 }
 

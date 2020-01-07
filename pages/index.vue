@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <h2>Welcome to the best corny dad jokes app on the wbe</h2>
+  <div class="banner">
+    <video autoplay muted loop>
+        <source src="/waves.mp4" type="video/mp4">
+    </video>
+    <h1>CodeChung</h1>
   </div>
 </template>
 
@@ -9,12 +12,12 @@
 export default {
     head() {
         return {
-            title: 'Welcome to Dad Jokes',
+            title: 'Welcome to CodeChung',
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'Best place for corny dad hokes'
+                    content: 'Best place for codechungs'
                 }
             ]
         }
@@ -23,5 +26,44 @@ export default {
 </script>
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
 
+.banner {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner h1 {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    font-size: 14vw;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    line-height: 100vh;
+    mix-blend-mode: screen;
+    letter-spacing: .01px;
+}
 </style>
