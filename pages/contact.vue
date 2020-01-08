@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <h1>Contact</h1>
+    <h1>Contact <span style="color:#bfd5ff;">Me</span></h1>
     <ul>
       <li><a href="mailto:hc9825@gmail.com" target="_blank"><img class="fa" src="/gmail.png" /></a></li>
       <li><a href="https://github.com/CodeChung" target="_blank"><img class="fa" src="/github.png" /></a></li>
@@ -50,7 +50,7 @@ export default {
 .contact ul li {
   list-style: none;
   margin: 0 40px;
-  width: 300px;
+  width: 260px;
   height: 250px;
   display: flex;
   justify-content: center;
@@ -86,6 +86,6 @@ export default {
 .contact ul li a:hover {
   transform: perspective(1000px) rotate(-30deg) skew(25deg)
     translate(20px, -20px);
-  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.2);
 }
 </style>

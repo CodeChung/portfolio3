@@ -41,7 +41,7 @@ export default {
 
 .header .title {
   font-size: 5rem;
-  color: #284172;
+  color: #bfd5ff;
   border: 1px solid black;
   border-radius: 3px;
   width: 80px;
@@ -54,7 +54,7 @@ export default {
 
 .header .title:hover {
   background: black;
-  color: #bfd5ff;
+  color: #dfeaff;
 }
 
 .header ul {

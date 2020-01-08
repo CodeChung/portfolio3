@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <h1>Portfolio3</h1>
-        <p>this is an app that displays corny dad hokes</p>
+    <div class="portfolio">
+        <h1>Port<span style="color:#bfd5ff;">folio</span></h1>
+        <p>proyects</p>
     </div>
 </template>
 
@@ -23,5 +23,9 @@ export default {
 </script>
 
 <style>
-
+.portfolio {
+    padding-top: 30px;
+    max-width: 90%;
+    margin: 0 auto;
+}
 </style>

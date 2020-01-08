@@ -1,5 +1,5 @@
 <template>
-  <div v-if="menu" class="menu-container">
+  <div v-if="!menu" class="menu-container">
     <ul>
       <li>
         <nuxt-link to="/" data-text="Home">Home</nuxt-link>
@@ -13,13 +13,21 @@
       <li>
         <nuxt-link to="/contact" data-text="Contact">Contact</nuxt-link>
       </li>
+      <li>
+        <WebButler />
+      </li>
+      <WebButler />
     </ul>
   </div>
 </template>
 
 <script>
+import WebButler from "./WebButler";
 export default {
-    props: ["menu"]
+  components: {
+    WebButler
+  },
+  props: ["menu"]
 };
 </script>
 
@@ -33,57 +41,57 @@ export default {
 }
 
 .menu-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #000;
-    overflow: hidden;
-    position: absolute;
-    z-index: 1;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
 }
 
 .menu-container ul li {
-    list-style: none;
+  list-style: none;
 }
 
 .menu-container ul li a {
-    position: relative;
-    display: block;
-    color: transparent;
-    -webkit-text-stroke: 1px #fff;
-    font-size: 5em;
-    font-weight: 900;
-    text-decoration: none;
-    line-height: 1.2em;
+  position: relative;
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  font-size: 5em;
+  font-weight: 900;
+  text-decoration: none;
+  line-height: 1.2em;
 }
 
 .menu-container ul li a:hover {
-    color: #fff;
-    -webkit-text-stroke: 1px #000;
-    transition: 0.5s;
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
+  transition: 0.5s;
 }
 .menu-container ul li a:before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .menu-container ul li a:hover:before {
-    color: #0ff;
-    z-index: 1;
-    -webkit-text-stroke: 1px #000;
-    transform: translate(10px, -10px);
-    transition: 0.5s;
+  color: #0ff;
+  z-index: 1;
+  -webkit-text-stroke: 1px #000;
+  transform: translate(10px, -10px);
+  transition: 0.5s;
 }
 
 .menu-container ul li a:hover:after {
-    color: #0ff;
-    z-index: 2;
-    -webkit-text-stroke: 1px #000;
-    transform: translate(20px, -20px);
-    transition: 0.5s;
+  color: #0ff;
+  z-index: 2;
+  -webkit-text-stroke: 1px #000;
+  transform: translate(20px, -20px);
+  transition: 0.5s;
 }
 </style>
