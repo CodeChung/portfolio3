@@ -38,7 +38,6 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    'nuxt-fontawesome',
   ],
   /*
   ** Build configuration
