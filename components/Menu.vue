@@ -1,5 +1,8 @@
 <template>
-  <div v-if="!menu" class="menu-container">
+  <div v-if="menu" class="menu-container">
+    <div class="close-menu" @click="closeMenu">
+      <button>CLOSE</button>
+    </div>
     <ul>
       <li>
         <nuxt-link to="/" data-text="Home">Home</nuxt-link>
@@ -13,9 +16,6 @@
       <li>
         <nuxt-link to="/contact" data-text="Contact">Contact</nuxt-link>
       </li>
-      <li>
-        <WebButler />
-      </li>
       <WebButler />
     </ul>
   </div>
@@ -26,6 +26,11 @@ import WebButler from "./WebButler";
 export default {
   components: {
     WebButler
+  },
+  methods: {
+    closeMenu() {
+
+    }
   },
   props: ["menu"]
 };
@@ -38,6 +43,19 @@ export default {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+}
+
+.close-menu {
+  position: absolute;
+  left: 80px;
+  top: 80px;
+}
+
+.close-menu button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 22px;
 }
 
 .menu-container {
