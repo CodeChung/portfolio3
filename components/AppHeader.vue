@@ -49,7 +49,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: .4s;
+  transition: .2s ease-in-out;
 }
 
 .header .title:hover {
