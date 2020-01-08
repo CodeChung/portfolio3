@@ -6,6 +6,11 @@
       <li><a href="https://github.com/CodeChung" target="_blank"><img class="fa" src="/github.png" /></a></li>
       <li><a href="https://www.linkedin.com/in/harry-h-chung/" target="_blank"><img class="fa" src="/linkedin.png" /></a></li>
     </ul>
+    <div class="ginger">
+      <a href="https://docs.google.com/document/d/1vFk-gxdaSvRwkk_tgjKGjdkF0U9ij2AzPvIKnr8FwGk/edit?usp=sharing" target="_blank">
+        <img src="/gingerbread.png" alt="ginger bread recruiter" />
+      </a>
+    </div>
   </div>
 </template>
 
@@ -87,5 +92,23 @@ export default {
   transform: perspective(1000px) rotate(-30deg) skew(25deg)
     translate(20px, -20px);
   box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.2);
+}
+
+.ginger {
+  position: absolute;
+  right: -150px;
+  bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: 1s ease-in;
+}
+
+.ginger:hover, .ginger:active {
+  opacity: 1;
+}
+
+.ginger img {
+  width: 50%;
 }
 </style>

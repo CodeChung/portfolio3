@@ -6,25 +6,39 @@
     </h1>
     <div class="carousel">
       <div class="project-card">
-        <img src="/facejams.jpeg" alt="face jams" />
+        <nuxt-link :to="'/portfolio/facejams'">
+          <img src="/facejams.jpeg" alt="face jams" />
+        </nuxt-link>
       </div>
       <div class="project-card">
-        <img src="/goala.png" alt="goala" />
+        <nuxt-link :to="'/portfolio/goala'">
+          <img src="/goala.png" alt="goala" />
+        </nuxt-link>
       </div>
       <div class="project-card">
-        <img src="/fridgefriend.png" alt="fridge friend" />
+        <nuxt-link :to="'/portfolio/fridgefriend'">
+          <img src="/fridgefriend.png" alt="fridge friend" />
+        </nuxt-link>
       </div>
       <div class="project-card">
-        <img src="/noodlebox.jpg" alt="noodlebox" />
+        <nuxt-link :to="'/portfolio/noodlebox'">
+          <img src="/noodlebox.jpg" alt="noodlebox" />
+        </nuxt-link>
       </div>
       <div class="project-card">
-        <img src="/fridgefriend.png" alt="my day spa" />
+        <nuxt-link :to="'/portfolio/mydayspa'">
+          <img src="/fridgefriend.png" alt="my day spa" />
+        </nuxt-link>
       </div>
       <div class="project-card">
-        <img src="/fridgefriend.png" alt="eatos" />
+        <nuxt-link :to="'/portfolio/eatos'">
+          <img src="/fridgefriend.png" alt="eatos" />
+        </nuxt-link>
       </div>
       <div class="project-card">
-        <img src="/fridgefriend.png" alt="network km" />
+        <nuxt-link :to="'/portfolio/networkkm'">
+          <img src="/fridgefriend.png" alt="network km" />
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -57,19 +71,20 @@ export default {
 }
 
 .carousel {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-card {
-    margin: 10px;
-    width: 25%;
-    box-sizing: border-box;
+  margin: 10px;
+  width: 25%;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .project-card img {
-    width: 100%;
+  width: 100%;
 }
 </style>
