@@ -111,4 +111,23 @@ export default {
 .ginger img {
   width: 50%;
 }
+
+@media(max-width:768px) {
+  .contact {
+    overflow: scroll;
+    width: 100%;
+  }
+  .contact ul {
+    flex-direction: column;
+    position: relative;
+    top: 50vh;
+  }
+  .ginger {
+    width: 100px;
+    right: 0;
+  }
+  .ginger img {
+    width: 100%;
+  }
+}
 </style>

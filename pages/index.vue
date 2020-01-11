@@ -3,7 +3,7 @@
     <video autoplay muted loop>
         <source src="/waves.mp4" type="video/mp4">
     </video>
-    <h1>CodeChung</h1>
+    <div class="title">CodeChung</div>
   </div>
 </template>
 
@@ -51,7 +51,7 @@ export default {
     object-fit: cover;
 }
 
-.banner h1 {
+.banner .title {
     position: absolute;
     top: -10%;
     left: 0;
@@ -64,6 +64,19 @@ export default {
     color: #000;
     line-height: 100vh;
     mix-blend-mode: screen;
+    display: flex;
+    justify-content: center;
     letter-spacing: .01px;
+    font-size: 3.3em;
+}
+
+.line-break {
+    display: none;
+}
+
+@media(max-width:768px) {
+    .line-break {
+        display: block;
+    }
 }
 </style>
