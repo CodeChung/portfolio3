@@ -1,6 +1,6 @@
 <template>
   <div class="about" @mousemove="moveEyes">
-    <h1>Help Desk</h1>
+    <h1 class="neon" data-text="Help Desk">Help Desk</h1>
     <div class="butler">
       <div class="face">
         <div class="eyes">
@@ -12,14 +12,14 @@
     </div>
     <div class="messages">
       <div class="bobert message-chat">
-        <p>YOLO</p>
+        <p><span style="color:red;">Sorry</span>, I'm on break right now. Check back later.</p>
       </div>
       <div class="client message-chat">
-        <p>YOWDY</p>
+        <p>Bobert Phillips, Web Intern</p>
       </div>
     </div>
     <div class="message-input">
-      <input type="text" v-model="text" >
+      <input type="text" v-model="text" />
       <button>SEND</button>
     </div>
   </div>
@@ -27,8 +27,7 @@
 
 <script>
 export default {
-  components: {
-  },
+  components: {},
   head() {
     return {
       title: "About the App",
@@ -67,8 +66,77 @@ export default {
   align-items: center;
   height: calc(100vh - 100px);
   flex-direction: column;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,ffffff+0,878787+8,1c1c1c+20,000000+35,000000+35,000000+39,111111+60,000000+76,000000+99,000000+100,131313+100 */
+  background: #000000; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #000000 0%,
+    #ffffff 0%,
+    #878787 8%,
+    #1c1c1c 20%,
+    #000000 35%,
+    #000000 35%,
+    #000000 39%,
+    #111111 60%,
+    #000000 76%,
+    #000000 99%,
+    #000000 100%,
+    #131313 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #000000 0%,
+    #ffffff 0%,
+    #878787 8%,
+    #1c1c1c 20%,
+    #000000 35%,
+    #000000 35%,
+    #000000 39%,
+    #111111 60%,
+    #000000 76%,
+    #000000 99%,
+    #000000 100%,
+    #131313 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #ffffff 0%,
+    #878787 8%,
+    #1c1c1c 20%,
+    #000000 35%,
+    #000000 35%,
+    #000000 39%,
+    #111111 60%,
+    #000000 76%,
+    #000000 99%,
+    #000000 100%,
+    #131313 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
 }
 
+.neon {
+  position: absolute;
+  left: 50%;
+  top: 16.9vh;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0 20px;
+  font-size: 6em;
+  color: #fff;
+  text-shadow: 0 0 20px #ff005b;
+}
+
+.neon:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  z-index: -1;
+  color: #ff005b;
+}
 
 .face {
   width: 300px;
@@ -79,6 +147,8 @@ export default {
   justify-content: center;
   align-items: center;
   transform: scale(0.7);
+  position: relative;
+  top: 30px;
 }
 
 .face::before {
@@ -140,6 +210,7 @@ export default {
   padding: 25px;
   box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.15);
   border: 1px solid #ebebeb;
+  background: ghostwhite;
 }
 
 .message-chat {
@@ -183,5 +254,14 @@ export default {
   margin-right: 5px;
   border-radius: 6.9px;
   outline: none;
+}
+
+@media(max-width:768px) {
+  .neon {
+    font-size: 3.14em;
+  }
+  .message-chat {
+    font-size: 16px;
+  }
 }
 </style>
