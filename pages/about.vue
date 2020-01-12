@@ -10,6 +10,18 @@
         </div>
       </div>
     </div>
+    <div class="messages">
+      <div class="bobert message-chat">
+        <p>YOLO</p>
+      </div>
+      <div class="client message-chat">
+        <p>YOWDY</p>
+      </div>
+    </div>
+    <div class="message-input">
+      <input type="text" v-model="text" >
+      <button>SEND</button>
+    </div>
   </div>
 </template>
 
@@ -51,7 +63,7 @@ export default {
 <style>
 .about {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: calc(100vh - 100px);
   flex-direction: column;
@@ -116,5 +128,60 @@ export default {
   height: 40px;
   background: #333;
   border-radius: 50%;
+}
+
+.messages {
+  width: 60%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 25px;
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ebebeb;
+}
+
+.message-chat {
+  width: 100%;
+  height: 69px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.69rem;
+}
+
+.bobert {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.client {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.message-input {
+  height: 119px;
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+  padding-top: 6.9px;
+}
+
+.message-input input {
+  height: 39px;
+  outline: none;
+  width: 60%;
+  border-radius: 6.9px;
+  border: 1px solid grey;
+  padding: 0 10px;
+}
+
+.message-input button {
+  height: 39px;
+  width: 80px;
+  margin-right: 5px;
+  border-radius: 6.9px;
+  outline: none;
 }
 </style>
