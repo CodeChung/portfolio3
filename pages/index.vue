@@ -67,7 +67,6 @@ export default {
     display: flex;
     justify-content: center;
     letter-spacing: .01px;
-    font-size: 3.3em;
 }
 
 .line-break {

@@ -1,19 +1,22 @@
 <template>
-  <div class="about">
-    <section class="zoom">
-      <img src="/mountain1.png" alt="peak mountain" id="layer1" />
-      <img src="/mountain2.png" alt="peak mountain" id="layer2" />
-      <img src="/text.png" alt="adventure time text" id="text" />
-    </section>
-    <section class="content">
-      <h2>Howdy</h2>
-      <p>My name is Harry Chung</p>
-    </section>
+  <div class="about" @mousemove="moveEyes">
+    <h1>Help Desk</h1>
+    <div class="butler">
+      <div class="face">
+        <div class="eyes">
+          <div class="eye"></div>
+          <div class="eye"></div>
+          <div class="moustache"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  components: {
+  },
   head() {
     return {
       title: "About the App",
@@ -27,45 +30,18 @@ export default {
       ]
     };
   },
-  created() {
-    if (process.browser) {
-      window.addEventListener("scroll", this.handleScroll);
-    }
-  },
-  mounted() {
-    window.onscroll = () => {
-      console.log("scrolling");
-      if (
-        document.documentElement.scrollTop > 0 ||
-        document.body.scrollTop > 0
-      ) {
-        console.log('hgvc')
-      }
-    };
-  },
+  created() {},
+  mounted() {},
   methods: {
-    handleScroll() {
-      console.log(window.scrollY);
-    },
-    scrollMountain() {
-      console.log("bonionj");
-      let layer1 = document.getElementById("layer1");
-      scroll = window.pageYOffset;
+    moveEyes() {
+      let eye = document.querySelectorAll(".eye");
+      eye.forEach(function(eye) {
+        let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
+        let y = eye.getBoundingClientRect().top + eye.clientWidth / 2;
+        let radian = Math.atan2(event.pageX - x, event.pageY - y);
+        let rot = radian * (180 / Math.PI) * -1 + 270;
 
-      document.addEventListener("scroll", function(e) {
-        let offset = window.pageYOffset;
-        scroll = offset;
-        layer1.style.width = 100 + scroll / 5 + "%";
-      });
-
-      let layer2 = document.getElementById("layer2");
-      scroll = window.pageYOffset;
-
-      document.addEventListener("scroll", function(e) {
-        let offset = window.pageYOffset;
-        scroll = offset;
-        layer2.style.width = 100 + scroll / 5 + "%";
-        layer2.style.left = scroll / 50 + "%";
+        eye.style.transform = "rotate(" + rot + "deg)";
       });
     }
   }
@@ -74,64 +50,71 @@ export default {
 
 <style>
 .about {
-  margin: 0;
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+  flex-direction: column;
 }
 
-.zoom {
-  width: 100%;
-  height: 1000px;
-  position: relative;
-  overflow: hidden;
-  background: url("../static/bg.jpg");
-  background-size: cover;
+
+.face {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #ffcd00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.7);
 }
 
-.zoom:before {
+.face::before {
   content: "";
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 200px;
-  z-index: 1000;
-  background: linear-gradient(transparent, #fff);
+  top: 180px;
+  width: 150px;
+  height: 70px;
+  background: #b57700;
+  transition: 0.5s;
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
 }
 
-.zoom #layer1 {
+.face:hover::before {
+  top: 210px;
+  width: 150px;
+  height: 20px;
+  background: #b57700;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.eyes {
+  position: relative;
+  top: -40px;
+  display: flex;
+}
+
+.eyes .eye {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: block;
+  background: #fff;
+  margin: 0 15px;
+  border-radius: 50%;
+}
+
+.eyes .eye::before {
+  content: "";
   position: absolute;
-  left: 40%;
-  width: 100%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
-.zoom #layer2 {
-  position: absolute;
-  right: 0;
-  width: 100%;
-  z-index: 9;
-}
-
-.zoom #text {
-  position: absolute;
-  right: 0;
-  width: 100%;
-  transform: translateY(50%);
-}
-
-.content {
-  padding: 100px;
-  box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
-}
-
-.content h2 {
-  margin: 0;
-  padding: 0;
-  font-size: 4em;
-}
-
-.content p {
-  font-size: 1.2em;
+  top: 50%;
+  left: 25px;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border-radius: 50%;
 }
 </style>

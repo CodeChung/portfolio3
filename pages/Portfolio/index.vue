@@ -1,8 +1,7 @@
 <template>
   <div class="portfolio">
     <h1>
-      Port
-      <span style="color:#bfd5ff;">folio</span>
+      Port<span style="color:#bfd5ff;">folio</span>
     </h1>
     <div class="carousel">
       <div class="project-card">
