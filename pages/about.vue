@@ -10,17 +10,27 @@
         </div>
       </div>
     </div>
+    <div class="badge">
+      <div class="badge-top">Hello my name is</div>
+      <div class="badge-text">
+        <h3>Bobert Phillips</h3>
+        <h4>Web Intern, PhD</h4>
+      </div>
+      <div class="badge-bottom"></div>
+    </div>
     <div class="messages">
       <div class="bobert message-chat">
-        <p><span style="color:red;">Sorry</span>, I'm on break right now. Check back later.</p>
+        <p>
+          <span style="color:red;">Sorry</span>, I'm on break right now. Check back later.
+        </p>
       </div>
       <div class="client message-chat">
         <p>Bobert Phillips, Web Intern</p>
       </div>
     </div>
     <div class="message-input">
-      <input type="text" v-model="text" />
-      <button>SEND</button>
+      <!-- <input type="text" v-model="text" />
+      <button>SEND</button>-->
     </div>
   </div>
 </template>
@@ -119,13 +129,14 @@ export default {
 .neon {
   position: absolute;
   left: 50%;
-  top: 16.9vh;
+  top: 20vh;
   transform: translate(-50%, -50%);
   margin: 0;
   padding: 0 20px;
-  font-size: 6em;
+  font-size: 5em;
   color: #fff;
   text-shadow: 0 0 20px #ff005b;
+  opacity: 0.29;
 }
 
 .neon:after {
@@ -148,7 +159,40 @@ export default {
   align-items: center;
   transform: scale(0.7);
   position: relative;
-  top: 30px;
+  top: 69px;
+  margin-bottom: 70px;
+}
+
+.badge {
+  background: ghostwhite;
+  border-radius: 12px;
+  position: absolute;
+  left: 25.9%;
+  top: 46%;
+  transition: 0.4s;
+}
+
+.badge:hover,
+.badge:active {
+  transform: scale(1.69);
+}
+
+.badge-top {
+  background: blue;
+  padding: 5px;
+}
+
+.badge-text {
+  padding: 5px;
+}
+
+.butler {
+  background: turquoise;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 15px 15px 0 0;
 }
 
 .face::before {
@@ -201,8 +245,8 @@ export default {
 }
 
 .messages {
-  width: 60%;
-  border-radius: 25px;
+  width: 50%;
+  border-radius: 0 0 25px 25px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -218,7 +262,7 @@ export default {
   height: 69px;
   display: flex;
   flex-direction: column;
-  font-size: 1.69rem;
+  font-size: 20px;
 }
 
 .bobert {
@@ -235,7 +279,7 @@ export default {
   height: 119px;
   display: flex;
   justify-content: flex-end;
-  width: 60%;
+  width: 50%;
   padding-top: 6.9px;
 }
 
@@ -256,12 +300,29 @@ export default {
   outline: none;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
+  .about {
+    padding-top: 40px;
+  }
   .neon {
-    font-size: 3.14em;
+    font-size: 3.1em;
+    top: 26vh;
+  }
+  .messages {
+    width: 90%;
   }
   .message-chat {
     font-size: 16px;
+  }
+  .message-input {
+    width: 90%;
+  }
+  .butler {
+    width: 90%;
+  }
+  .badge {
+    left: 8%;
+    top: 51%;
   }
 }
 </style>

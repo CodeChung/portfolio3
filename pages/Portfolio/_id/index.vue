@@ -250,9 +250,10 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 120px;
   position: relative;
   z-index: 1;
+  padding: 0 100px;
 }
 
 .content .bannerText {
@@ -328,7 +329,7 @@ export default {
     z-index: -1;
   }
   .tag {
-    opacity: .15;
+    opacity: .069;
     font-size: 2.5em;
   }
   .left-side {
@@ -336,6 +337,7 @@ export default {
   }
   .content {
     margin-bottom: 40px;
+    padding: 0;
   }
   .content .bannerImg {
     width: 80vw;
